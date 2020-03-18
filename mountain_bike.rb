@@ -9,12 +9,20 @@ class MountainBike
     @hourly_rate = 10
   end
 
+  def total_price(days,hours)
+    luggage_price + weekly_rate*(days/7).to_i + daily_rate*(days%7)+ hourly_rate*hours
+  end
+
   def clean
     puts "Cleaning..."
   end
 
   def adjust_suspension
     puts "Adjusting suspension..."
+  end
+
+  def luggage_price
+    luggage.price
   end
 
   def luggage

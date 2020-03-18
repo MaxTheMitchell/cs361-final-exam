@@ -17,9 +17,7 @@ bikes = [
 total_price = 0
 total_price += bikes[0].total_price(7,0)
 total_price += bikes[1].total_price(7,0)
-total_price += bikes[2].weekly_rate
-total_price += bikes[2].luggage.price
-total_price += bikes[3].weekly_rate
-total_price += bikes[3].luggage.price
+total_price += bikes[2].total_price(7,0)
+total_price += bikes[3].total_price(7,0)
 
 puts "Total price: #{total_price}"
