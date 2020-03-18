@@ -12,7 +12,7 @@ class BmxBike
 
 
   def total_price(days,hours)
-    tail_pack_price + weekly_rate*(days/7).to_i + daily_rate*(days%7)+ hourly_rate*hours
+    tail_pack_price + total_weekly_charge(days) + total_day_charge(days) + total_hour_charge(hours)
   end
 
   def clean
@@ -25,6 +25,18 @@ class BmxBike
 
   def tail_pack_price
     tail_pack.cost
+  end
+
+  def total_weekly_charge(days)
+    weekly_rate*(days/7).to_i 
+  end
+
+  def total_day_charge(days)
+    daily_rate*(days%7)
+  end
+
+  def total_hour_charge(hours)
+    hourly_rate*hours
   end
 
   def weekly_rate
