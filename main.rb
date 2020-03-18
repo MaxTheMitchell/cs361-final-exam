@@ -6,12 +6,14 @@
 require_relative 'bmx_bike'
 require_relative 'road_bike'
 require_relative 'mountain_bike'
+require_relative 'roll_pack'
+
 
 bikes = [
   BmxBike.new,
   RoadBike.new,
-  MountainBike.new,
-  MountainBike.new
+  MountainBike.new(RollPack.new),
+  MountainBike.new(RollPack.new)
 ]
 
 puts "Total price: #{bikes.reduce(0){|total,bike|total+bike.total_price(7,0)}}"
